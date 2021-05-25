@@ -55,8 +55,10 @@ function newGame() {
     if(random === 2) {
       p1Turn = false
       playerTurn.innerHTML = `${player2.name}, à toi de jouer !`
+      playerTurn.classList.add('text-red-700')
     } else {
     playerTurn.innerHTML = `${player1.name}, à toi de jouer !`
+    playerTurn.classList.add('text-blue-700')
     return p1Turn
     }
   }
@@ -124,6 +126,8 @@ function newGame() {
         player1.roundScore = 0
         p1Turn = false
         playerTurn.innerHTML = `${player2.name}, à toi de jouer !`
+        playerTurn.classList.remove('text-blue-700')
+        playerTurn.classList.add('text-red-700')
       } else {
         player1.roundScore += random
       }
@@ -133,6 +137,8 @@ function newGame() {
           player2.roundScore = 0
           p1Turn = true
           playerTurn.innerHTML = `${player1.name}, à toi de jouer !`
+          playerTurn.classList.remove('text-red-700')
+          playerTurn.classList.add('text-blue-700')
         } else {
           player2.roundScore += random
         }
@@ -160,6 +166,8 @@ function newGame() {
       
       p1Turn = false
       playerTurn.innerHTML = `${player2.name}, à toi de jouer !`
+      playerTurn.classList.remove('text-blue-700')
+      playerTurn.classList.add('text-red-700')
     } else {
         //update player1 score and corresponding DOM elements
         player2.globalScore += player2.roundScore
@@ -179,6 +187,8 @@ function newGame() {
         
         p1Turn = true
         playerTurn.innerHTML = `${player1.name}, à toi de jouer !`
+        playerTurn.classList.remove('text-red-700')
+        playerTurn.classList.add('text-blue-700')
     }
   }
 
